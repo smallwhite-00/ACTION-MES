@@ -1,12 +1,10 @@
 <component name="libraryTable">
   <library name="lib">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../各种文件夹/大四实训/快速开发平台/ACTION-MES/WebContent/WEB-INF/lib" />
+      <root url="file://$PROJECT_DIR$/WebContent/WEB-INF/lib" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.ideaLibSources/mybatis-3.2.8-sources.jar!/" />
-    </SOURCES>
-    <jarDirectory url="file://$PROJECT_DIR$/../../各种文件夹/大四实训/快速开发平台/ACTION-MES/WebContent/WEB-INF/lib" recursive="false" />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/WebContent/WEB-INF/lib" recursive="false" />
   </library>
 </component>
