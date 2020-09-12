@@ -3,10 +3,10 @@ package cn.action.modules.bas.entity;
 import cn.action.common.persistence.DataEntity;
 import cn.action.modules.sys.entity.Office;
 
-public class AndroidPAD extends DataEntity<AndroidPAD>{
+public class ElectronSteelYard extends DataEntity<ElectronSteelYard>{
 
 	/**
-	 * 安卓PAD类
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -29,11 +29,9 @@ public class AndroidPAD extends DataEntity<AndroidPAD>{
 	private String comEnd;
 	private String checkMode;
 	private String sysParam;
-	private String pADSC;
-	private String pADNucleus;
-	private String pADMemory;
-	private String capacity;
-
+	private String eSName;//名称
+	private String eSRange;//称重范围
+	private String eSWeight;//重量
 	public String getQrCode() {
 		return qrCode;
 	}
@@ -148,30 +146,24 @@ public class AndroidPAD extends DataEntity<AndroidPAD>{
 	public void setSysParam(String sysParam) {
 		this.sysParam = sysParam;
 	}
-	public String getpADSC() {
-		return pADSC;
+	public String geteSName() {
+		return eSName;
 	}
-	public void setpADSC(String pADSC) {
-		this.pADSC = pADSC;
+	public void seteSName(String eSName) {
+		this.eSName = eSName;
 	}
-	public String getpADNucleus() {
-		return pADNucleus;
+	public String geteSRange() {
+		return eSRange;
 	}
-	public void setpADNucleus(String pADNucleus) {
-		this.pADNucleus = pADNucleus;
+	public void seteSRange(String eSRange) {
+		this.eSRange = eSRange;
 	}
-	public String getpADMemory() {
-		return pADMemory;
+	public String geteSWeight() {
+		return eSWeight;
 	}
-	public void setpADMemory(String pADMemory) {
-		this.pADMemory = pADMemory;
+	public void seteSWeight(String eSWeight) {
+		this.eSWeight = eSWeight;
 	}
-	public String getCapacity() {
-		return capacity;
-	}
-	public void setCapacity(String capacity) {
-		this.capacity = capacity;
-	}
-
-
+	
+	
 }
