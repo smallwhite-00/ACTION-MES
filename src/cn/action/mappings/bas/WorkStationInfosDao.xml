@@ -47,6 +47,15 @@
 		where a.del_flag=#{DEL_FLAG_NORMAL}
 		order by a.update_date desc
 	</select>
+	<!-- 查询没有关联绩效参数的工站 -->
+	<select id="findNoPerform" resultType="WorkStationInfos">
+		select 
+			<include refid="lineColumns"/>
+		from bas_workstationinfos a
+			<include refid="lineJoins"/>
+		where a.del_flag=#{DEL_FLAG_NORMAL}
+		and a.id not in (select station_id from kpi_perform_station where del_flag=#{DEL_FLAG_NORMAL})
+	</select>
 	<!-- 4.添加 -->
 	<insert id="insert">
 		insert into bas_workstationinfos(

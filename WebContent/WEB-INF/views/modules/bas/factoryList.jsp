@@ -53,7 +53,7 @@
 					<td>${factory.factoryBuildM}</td>
 					<td>
 						<a href="${ctx}/bas/factory/form?id=${factory.id}">修改</a>
-						<a href="${ctx}/bas/factory/delete?id=${factory.id}" onclick="return confirm('确认要删除该工厂吗？',this.href)">删除</a>
+						<a href="${ctx}/bas/factory/delete?id=${factory.id}" onclick="return confirmx('确认要删除该工厂吗？',this.href)">删除</a>
 					</td>
 				</tr>
 			</c:forEach>		

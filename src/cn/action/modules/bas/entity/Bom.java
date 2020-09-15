@@ -17,6 +17,10 @@ public class Bom extends DataEntity<Bom>{
 	private String bomVersion;
 	private Product product;//产品外键对象
 	private String status;
+	
+	public Bom() {
+		this.product=new Product();
+	}
 	public String getBomName() {
 		return bomName;
 	}

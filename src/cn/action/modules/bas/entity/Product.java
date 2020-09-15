@@ -6,7 +6,7 @@ import cn.action.modules.tec.entity.Flow;
 public class Product extends DataEntity<Product>{
 
 	/**
-	 * ²úÆ·Àà
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
@@ -87,5 +87,6 @@ public class Product extends DataEntity<Product>{
 	public void setFlow(Flow flow) {
 		this.flow = flow;
 	}
-
+	
+	
 }

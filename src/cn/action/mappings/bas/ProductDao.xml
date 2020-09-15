@@ -15,17 +15,18 @@
 		a.productProp,
 		a.flow_id as "flow.id",
 		b.flowName as "flow.flowName",
+		
 		a.del_flag,
 		a.remarks,
 		a.create_by as "createBy.id",
 		a.create_date,
 		a.update_by as "updateBy.id",
-		a.update_date		
+		a.update_date			
 	</sql>
 	<sql id="Joins">
 		left join tec_flow b on b.id=a.flow_id
-	</sql>		
-	<!-- 1.get 根据id查询 -->
+	</sql>
+	<!-- 1.根据id查询 -->
 	<select id="get" resultType="Product">
 		select 
 			<include refid="Columns"/>
@@ -33,7 +34,7 @@
 			<include refid="Joins"/>
 		where a.id=#{id}
 	</select>
-	<!-- 2.分页、按条件查询 -->
+	<!-- 2.多条件查询 -->
 	<select id="findList" resultType="Product">
 		select 
 			<include refid="Columns"/>
@@ -74,7 +75,7 @@
 			create_by,
 			create_date,
 			update_by,
-			update_date			
+			update_date
 		)values(
 			#{id},
 			#{productName},
@@ -100,7 +101,7 @@
 	<update id="update">
 		update bas_product set
 			productName=#{productName},
-			productName=#{productName},
+			productAbbr=#{productAbbr},
 			productDesc=#{productDesc},
 			firstCheck=#{firstCheck},
 			qrCode=#{qrCode},
@@ -118,6 +119,6 @@
 	<update id="delete">
 		update bas_product set
 			del_flag=#{DEL_FLAG_DELETE}
-		where id=#{id}
+		where id=#{id} 
 	</update>
 </mapper>

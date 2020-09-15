@@ -60,7 +60,7 @@
 				<td>${enterprise.enterRemarks}</td>
 				<td>
 					<a href="${ctx}/bas/enterprise/form?id=${enterprise.id}">修改</a>
-					<a href="${ctx}/bas/enterprise/delete?id=${enterprise.id}" onclick="return confirm('确认要删除该企业吗？',this.href)">删除</a>
+					<a href="${ctx}/bas/enterprise/delete?id=${enterprise.id}" onclick="return confirmx('确认要删除该企业吗？',this.href)">删除</a>
 				</td>
 			</tr>
 		</c:forEach>

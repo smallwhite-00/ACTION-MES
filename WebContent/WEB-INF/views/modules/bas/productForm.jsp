@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta name="decorator" content="default">
-	<title>产品管理</title></head>
+	<title>产品管理</title>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$("#value").focus();
@@ -26,8 +26,9 @@
 			});
 		});
 	</script>
+</head>
 <body>
-	<!-- 1.tab头部 -->
+	<!-- 1.tab -->
 	<ul class="nav nav-tabs">
 		<li><a href="${ctx}/bas/product/">产品列表</a></li>
 		<li class="active"><a href="">产品${not empty product.id?'修改':'添加' }</a></li>
@@ -58,13 +59,13 @@
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label">是否需要首件检查：</label>
+			<label class="control-label">是否需要首件检测：</label>
 			<div class="controls">
 				<form:select path="firstCheck" id="firstCheck" class="input-medium required">
 					<form:options items="${fns:getDictList('yes_no')}" itemLabel="label" itemValue="value" htmlEscape="false"/>
 				</form:select>
 				<span class="help-inline"><font color="red">*</font></span>
-			</div>	
+			</div>
 		</div>
 		<div class="control-group">
 			<label class="control-label">条码：</label>
@@ -114,7 +115,7 @@
 					<form:options items="${flowList}" itemLabel="flowName" itemValue="id" htmlEscape="false"/>
 				</form:select>
 				<span class="help-inline"><font color="red">*</font></span>
-			</div>	
+			</div>
 		</div>
 		<div class="form-actions">
 			<input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;

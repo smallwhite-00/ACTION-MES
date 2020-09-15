@@ -36,8 +36,7 @@ public class ProductController extends BaseController{
 		}
 		return new Product();
 	}
-	
-	//查询，分页，多条件
+	//按照条件分页查询
 	@RequestMapping(value= {"list",""})
 	public String list(Product product,HttpServletRequest request,HttpServletResponse response,Model model) {
 		Page<Product> page=productService.findPage(new Page<Product>(request, response), product);
@@ -51,7 +50,7 @@ public class ProductController extends BaseController{
 		this.addMessage(redirectAttributes, "保存产品信息成功！");
 		return "redirect:"+adminPath+"/bas/product";
 	}
-	//保存
+	//删除
 	@RequestMapping(value="delete")
 	public String delete(Product product,Model model,RedirectAttributes redirectAttributes) {
 		productService.delete(product);
@@ -67,4 +66,5 @@ public class ProductController extends BaseController{
 		model.addAttribute("product", product);
 		return "modules/bas/productForm";
 	}
+	
 }

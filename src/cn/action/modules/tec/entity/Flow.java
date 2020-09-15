@@ -5,7 +5,7 @@ import cn.action.common.persistence.DataEntity;
 public class Flow extends DataEntity<Flow>{
 
 	/**
-	 * 工艺流程实体类
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -38,4 +38,5 @@ public class Flow extends DataEntity<Flow>{
 		this.flowDesc = flowDesc;
 	}
 
+	
 }

@@ -34,7 +34,10 @@
 			<include refid="Joins"/>
 		where a.del_flag=#{DEL_FLAG_NORMAL}
 		<if test="bomName!=null and bomName!=''">
-			and bomName like concat('%',#{bomName},'%')
+			and a.bomName like concat('%',#{bomName},'%')
+		</if>
+		<if test="product.id!=null and product.id!=''"><!-- 根据产品id查询Bom信息 -->
+			and a.product_id =#{product.id}
 		</if>
 		order by a.update_date desc
 	</select>
