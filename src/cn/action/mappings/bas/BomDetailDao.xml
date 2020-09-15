@@ -38,10 +38,7 @@
 			<if test="bom.bomName!=null and bom.bomName!=''">
 				and b.bomName like concat('%',#{bom.bomName},'%')
 			</if>
-			<if test="bom.id!=null and bom.id!=''"><!-- 根据bom_id查询bom详情 -->
-				and a.bom_id=#{bom.id}
-			</if>
-		</if>					
+		</if>			
 		order by bom_id
 	</select>
 	<!-- 3.查询所有 -->
