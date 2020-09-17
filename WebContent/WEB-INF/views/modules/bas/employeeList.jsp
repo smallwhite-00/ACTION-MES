@@ -44,8 +44,8 @@
 			<th>性别</th>
 			<th>年龄</th>
 			<th>电话</th>
-			<th>邮箱</th>
 			<th>地址</th>
+			<th>邮箱</th>
 			<th>操作</th>			
 		</thead>
 		<tbody>
