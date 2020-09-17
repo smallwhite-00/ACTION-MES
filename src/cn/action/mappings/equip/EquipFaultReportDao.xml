@@ -3,6 +3,8 @@
 <mapper namespace="cn.action.modules.equip.dao.EquipFaultReportDao">
 	
 	<!-- 插入 -->
+	<!-- 插入 -->
+
 	<insert id="insert">
 		insert into equip_fault_report(
 			id,
@@ -21,6 +23,7 @@
 			create_date,
 			update_by,
 			update_date
+
 			
 		)values(
 			#{id},
