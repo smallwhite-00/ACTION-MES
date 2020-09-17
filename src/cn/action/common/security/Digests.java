@@ -27,7 +27,7 @@ public class Digests {
 	private static SecureRandom random = new SecureRandom();
 
 	/**
-	 * 对输入字符串进行md5散列.
+	 * 对输入字符串进行md5散列.jianshulideshude,shiwuqingdeshuduzhihao,jintaiyaunzhong,wuolingrenbuyioweyuw,wanglizuhutan
 	 */
 	public static byte[] md5(byte[] input) {
 		return digest(input, MD5, null, 1);
