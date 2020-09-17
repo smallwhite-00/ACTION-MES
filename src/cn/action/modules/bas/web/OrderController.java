@@ -50,3 +50,4 @@ public class OrderController extends BaseController{
 		return "redirect:"+adminPath+"/bas/workOrder/form?orderId="+order.getId();
 	}
 }
+

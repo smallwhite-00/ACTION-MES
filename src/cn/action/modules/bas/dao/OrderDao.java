@@ -6,3 +6,4 @@ import cn.action.modules.bas.entity.Order;
 public interface OrderDao extends CrudDao<Order>{
 
 }
+

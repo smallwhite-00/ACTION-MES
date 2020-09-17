@@ -19,3 +19,4 @@ public class OrderService extends CrudService<OrderDao, Order>{
 		return false;
 	}
 }
+
