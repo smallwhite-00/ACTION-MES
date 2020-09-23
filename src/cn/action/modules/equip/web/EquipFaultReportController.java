@@ -71,7 +71,6 @@ public class EquipFaultReportController extends BaseController{
 		model.addAttribute("page",page);
 		return "modules/equip/equipFaultReportList";	
 	}
-
 	//派工
 	@RequestMapping(value="assign")
 	public String assign(EquipFaultReport equipFaultReport,Model model,RedirectAttributes redirectAttributes) {
@@ -95,9 +94,8 @@ public class EquipFaultReportController extends BaseController{
 		this.addMessage(redirectAttributes, "派工成功！");
 		return "redirect:"+adminPath+"/equip/report";
 	}
-
 	//按条件分页查询,跳转到设备维修记录页面
-	@RequestMapping(value= "repariList")
+	@RequestMapping(value="repairList")
 	public String repairList(EquipFaultReport equipFaultReport,HttpServletRequest request,HttpServletResponse response,Model model) {
 		//获得所有产线信息
 		List<Line> lines=lineService.findAllList(new Line());
@@ -107,13 +105,10 @@ public class EquipFaultReportController extends BaseController{
 		model.addAttribute("page",page);
 		return "modules/equip/equipRepairList";
 	}
-	//开工
-	@RequestMapping(value="start")
+		@RequestMapping(value="start")
 	public String startRepair(EquipFaultReport equipFaultReport,Model model,RedirectAttributes redirectAttributes){
-
-		String message=equipFaultReportService.saveStartRepair(equipFaultReport);
-		this.addMessage(redirectAttributes,message);
-		return "redirect:"+adminPath+"/equip/report/repairList";
+	String message=equipFaultReportService.saveStartRepair(equipFaultReport);
+	this.addMessage(redirectAttributes,message);
+	return "redirect:"+adminPath+"/equip/report/repairList";
 	}
-	
 }

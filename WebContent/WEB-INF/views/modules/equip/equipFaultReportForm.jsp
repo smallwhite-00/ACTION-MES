@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-
 	<meta name="decorator" content="default">
 	<title>设备故障上报</title>
 	<script type="text/javascript">
@@ -62,7 +61,7 @@
 			<div class="controls">
 				<form:select path="equipLoc" id="equipLoc" class="input-medium required">
 					<form:option value="" label=""/>
-					<form:options items="${lineList}" itemLabel="lineName" itemValue="id" htmlEscape="false"/>
+					<form:options items="${lineList}" itemLabel="lineName" itemValue="lineNumber" htmlEscape="false"/>
 				</form:select>
 				<span class="help-inline"><font color="red">*</font></span>
 			</div>
