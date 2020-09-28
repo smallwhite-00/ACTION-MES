@@ -67,7 +67,7 @@
 					<td>${fns:getDictLabel(report.status, 'eqiup_maintenance', '')}</td>
 					<td>
 						<a href="${ctx}/equip/report/start?id=${report.id}">开工</a>
-            <a href="${ctx}/equip/repair/form?id=${report.equipRepair.id}&mid=${report.id}">维修报告</a>
+                        <a href="${ctx}/equip/repair/form?id=${report.equipRepair.id}&mid=${report.id}">维修报告</a>
 					</td>
 				</tr>
 			</c:forEach>

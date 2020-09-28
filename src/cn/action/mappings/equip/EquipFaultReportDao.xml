@@ -59,7 +59,7 @@
 		  <include refid="Joins"/>
 		where a.del_flag=#{DEL_FLAG_NORMAL}
 		order by a.update_date desc
-	</select>
+    </select>
 	<!-- 插入 -->
 	<insert id="insert">
 		insert into equip_fault_report(
