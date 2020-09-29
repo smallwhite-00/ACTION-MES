@@ -95,7 +95,7 @@ public class EquipFaultReportController extends BaseController{
 		return "redirect:"+adminPath+"/equip/report";
 	}
 	//按条件分页查询,跳转到设备维修记录页面
-	@RequestMapping(value="repairList")
+	@RequestMapping(value="repairlist")
 	public String repairList(EquipFaultReport equipFaultReport,HttpServletRequest request,HttpServletResponse response,Model model) {
 		//获得所有产线信息
 		List<Line> lines=lineService.findAllList(new Line());
