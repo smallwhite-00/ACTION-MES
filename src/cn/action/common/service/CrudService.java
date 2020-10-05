@@ -2,6 +2,7 @@ package cn.action.common.service;
 
 import java.util.List;
 
+import cn.action.modules.bas.entity.AndroidPAD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -81,6 +82,9 @@ public class CrudService <D extends CrudDao<T>, T extends DataEntity<T>> extends
 	public void delete(T entity) {
 		dao.delete(entity);
 	}
+
+
+
 	/**
 	 * 查询所有数据
 	 * @param entity

@@ -53,7 +53,18 @@ public class FlowController extends BaseController{
 		this.addMessage(redirectAttributes, "删除工艺流程成功！");
 		return "redirect:"+adminPath+"/tec/flow";
 	}
-	
+
+	//批量删除
+	@RequestMapping(value="delmore")
+	public String delmore(String[] idAr,Flow flow,Model model,RedirectAttributes redirectAttributes) {
+
+		for (int i = 0; i < idAr.length; i++) {
+			flow.setId(idAr[i]);
+			flowService.delete(flow);
+		}
+		this.addMessage(redirectAttributes, "删除工艺流程成功！");
+		return "redirect:"+adminPath+"/tec/flow";
+	}
 	@RequestMapping(value="form")
 	public String form(Flow flow,Model model) {
 		model.addAttribute("flow", flow);

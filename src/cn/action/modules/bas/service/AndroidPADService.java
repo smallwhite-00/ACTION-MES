@@ -10,5 +10,4 @@ import cn.action.modules.bas.entity.AndroidPAD;
 @Service
 @Transactional(readOnly=true)
 public class AndroidPADService extends CrudService<AndroidPADDao, AndroidPAD> {
-
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.action.modules.bas.entity.AndroidPAD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,12 +55,23 @@ public class CodePrinterController extends BaseController{
 		this.addMessage(redirectAttributes, "保存条码打印机设备成功！");
 		return "redirect:"+adminPath+"/bas/codePrinter";
 	}
-	//保存
+	//删除
 	@RequestMapping(value="delete")
 	public String delete(CodePrinter codePrinter,Model model,RedirectAttributes redirectAttributes) {
 		codePrinterService.delete(codePrinter);
 		this.addMessage(redirectAttributes, "删除条码打印机设备成功！");
 		return "redirect:"+adminPath+"/bas/codePrinter";
+	}
+	//批量删除
+	@RequestMapping(value="deleteList")
+	public String deleteList(String[] idAr, CodePrinter codePrinter, Model model, RedirectAttributes redirectAttributes) {
+
+		for (int i = 0; i < idAr.length; i++) {
+			codePrinter.setId(idAr[i]);
+			codePrinterService.delete(codePrinter);
+		}
+		this.addMessage(redirectAttributes, "删除条码打印机设备成功！");
+		return "redirect:" + adminPath + "/bas/codePrinter";
 	}
 	//跳转
 	@RequestMapping(value="form")

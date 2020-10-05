@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.action.modules.bas.entity.AndroidPAD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,6 +61,17 @@ public class ElectronSteelYardController extends BaseController{
 		electronSteelYardService.delete(electronSteelYard);
 		this.addMessage(redirectAttributes, "删除电子秤设备成功！");
 		return "redirect:"+adminPath+"/bas/electronSteelYard";
+	}
+	//批量删除
+	@RequestMapping(value="deleteList")
+	public String deleteList(String[] idAr, ElectronSteelYard electronSteelYard, Model model, RedirectAttributes redirectAttributes) {
+
+		for (int i = 0; i < idAr.length; i++) {
+			electronSteelYard.setId(idAr[i]);
+			electronSteelYardService.delete(electronSteelYard);
+		}
+		this.addMessage(redirectAttributes, "删除电子秤设备成功！");
+		return "redirect:" + adminPath + "/bas/electronSteelYard";
 	}
 	//跳转
 	@RequestMapping(value= "form")

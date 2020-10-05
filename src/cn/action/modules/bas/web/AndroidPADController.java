@@ -5,12 +5,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mysql.cj.xdevapi.JsonParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import cn.action.common.persistence.Page;
@@ -58,9 +57,22 @@ public class AndroidPADController extends BaseController{
 	//删除
 	@RequestMapping(value="delete")
 	public String delete(AndroidPAD androidPAD,Model model,RedirectAttributes redirectAttributes) {
+
 		androidPADService.delete(androidPAD);
 		this.addMessage(redirectAttributes, "删除PAD信息成功！");
 		return "redirect:"+adminPath+"/bas/androidPAD";
+	}
+	//批量删除
+	@RequestMapping(value="deleteList")
+	public String deleteList(String[] idAr, AndroidPAD androidPAD, Model model, RedirectAttributes redirectAttributes) {
+
+		for (int i = 0; i < idAr.length; i++) {
+			androidPAD.setId(idAr[i]);
+			androidPADService.delete(androidPAD);
+		}
+		
+		this.addMessage(redirectAttributes, "删除PAD信息成功！");
+		return "redirect:" + adminPath + "/bas/androidPAD";
 	}
 	//跳转页面
 	@RequestMapping(value="form")

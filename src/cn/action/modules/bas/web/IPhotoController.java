@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.action.modules.bas.entity.AndroidPAD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,6 +61,18 @@ public class IPhotoController extends BaseController{
 		iPhotoSevice.delete(iPhoto);
 		this.addMessage(redirectAttributes, "删除红外对射枪设备成功！");
 		return "redirect:"+adminPath+"/bas/iPhoto";
+	}
+	//批量删除
+	@RequestMapping(value="deleteList")
+	public String deleteList(String[] idAr, IPhoto iPhoto, Model model, RedirectAttributes redirectAttributes) {
+
+		for (int i = 0; i < idAr.length; i++) {
+			iPhoto.setId(idAr[i]);
+			iPhotoSevice.delete(iPhoto);
+		}
+
+		this.addMessage(redirectAttributes, "删除红外对射枪设备成功！");
+		return "redirect:" + adminPath + "/bas/iPhoto";
 	}
 	//跳转
 	@RequestMapping(value="form")

@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.action.modules.bas.entity.AndroidPAD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,7 +62,17 @@ public class CardReaderController extends BaseController{
 		this.addMessage(redirectAttributes, "删除读卡器设备成功！");
 		return "redirect:"+adminPath+"/bas/cardReader";
 	}
-	
+	//批量删除
+	@RequestMapping(value="deleteList")
+	public String deleteList(String[] idAr, CardReader cardReader, Model model, RedirectAttributes redirectAttributes) {
+
+		for (int i = 0; i < idAr.length; i++) {
+			cardReader.setId(idAr[i]);
+			cardReaderService.delete(cardReader);
+		}
+		this.addMessage(redirectAttributes, "删除读卡器设备成功！");
+		return "redirect:" + adminPath + "/bas/cardReader";
+	}
 	@RequestMapping(value="form")
 	public String form(CardReader cardReader,Model model) {
 		//获得所有工位
