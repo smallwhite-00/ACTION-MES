@@ -50,13 +50,24 @@
 		<input type="text" id="username" name="account" class="input-block-level required" value="${username}">
 		<label class="input-label" for="password">密码</label>
 		<input type="password" id="password" name="pwd" class="input-block-level required">
-	<%--
-		<label for="mobile" title="手机登录"><input type="checkbox" id="mobileLogin" name="mobileLogin" ${mobileLogin ? 'checked' : ''}/></label> --%>
+		<%--
+            <label for="mobile" title="手机登录">	<input type="checkbox" id="mobileLogin" name="mobileLogin" ${mobileLogin ? 'checked' : ''}/></label> --%>
+		<img src="/checkcode" id="checkCode" title="验证码的显示与更换" alt="点击生成验证码防止机器登录" width="340" height="32" class="center-block" style="height:43px;cursor:pointer;
+		text-align: center;font-size: inherit;
+" onclick="getPic()"/>
+		<script type="text/javascript">
+			function getPic(){
+				$("#checkCode").attr("src","checkCode?flag="+Math.random());
+			};
+
+		</script>
+		<input type="text" id="inputcode" name="inputcode" class="input-block-level required" placeholder="请输入验证码">
+
 		<input class="btn btn-large btn-primary" type="submit" value="登 录"/>&nbsp;&nbsp;
 		<label for="rememberMe" title="下次不需要再登录"><input type="checkbox" id="rememberMe" name="rememberMe" ${rememberMe ? 'checked' : ''}/> 记住我（公共场所慎用）</label>
-		 
-		
-		
+
+
+
 	</form>
 	<div class="footer">
 		Copyright &copy; 2017-${fns:getConfig('copyrightYear')} <a href="${pageContext.request.contextPath}${fns:getFrontPath()}">${fns:getConfig('productName')}</a> - Powered By <a href="http://techaction.cn" target="_blank">ACTION</a> ${fns:getConfig('version')} 
