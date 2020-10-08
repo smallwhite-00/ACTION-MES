@@ -66,6 +66,14 @@
 				<span class="help-inline"><font color="red">*</font></span>
 			</div>
 		</div>
+
+        <div class="control-group">
+            <label class="control-label">设备图片：</label>
+            <div class="controls">
+                <form:input type="file" name="headimg" path="equipPic" htmlEscape="false"  class="required"/>
+                <span class="help-inline"><font color="red">*</font></span>
+            </div>
+        </div>
 		<div class="control-group">
 			<label class="control-label">故障描述：</label>
 			<div class="controls">

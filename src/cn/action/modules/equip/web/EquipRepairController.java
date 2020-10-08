@@ -38,7 +38,7 @@ public class EquipRepairController  extends BaseController {
 	public String save(EquipRepair equipRepair, Model model, RedirectAttributes redirectAttributes) {
 		equipRepairService.saveRepair(equipRepair);
 		this.addMessage(redirectAttributes,"维修报告添加成功");
-		return "redirect:"+adminPath+"/equip/report/repairList";
+		return "redirect:"+adminPath+"/equip/report/repairlist";
 	}
 	@RequestMapping(value="form")
 	public String form(EquipRepair equipRepair, Model model){

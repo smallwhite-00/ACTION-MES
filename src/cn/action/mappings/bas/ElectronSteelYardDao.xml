@@ -28,7 +28,6 @@
 		a.eSName,
 		a.eSRange,
 		a.eSWeight,
-		
 		a.del_flag,
 		a.remarks,
 		a.create_by as "createBy.id",

@@ -20,7 +20,7 @@
 		<li class="active"><a href="${ctx}/equip/report">设备维修列表</a></li>
 	</ul>
 	<!-- 2.查询 -->
-	<form:form id="searchForm" method="post" action="${ctx}/equip/report/repairList" modelAttribute="equipFaultReport" class="breadcrumb form-search">
+	<form:form id="searchForm" method="post" action="${ctx}/equip/report/repairlist" modelAttribute="equipFaultReport" class="breadcrumb form-search">
 		<input id="pageNo" name="pageNo" type="hidden" value=${page.pageNo}/>
 		<input id="pageSize" name="pageSize" type="hidden" value=${page.pageSize}/>
 		<div class="controls">

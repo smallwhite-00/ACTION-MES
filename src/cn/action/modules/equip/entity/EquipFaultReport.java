@@ -19,6 +19,17 @@ public class EquipFaultReport extends DataEntity<EquipFaultReport>{
 	private String equipNo;//设备编号
 	private String equipType;//设备类型
 	private String equipLoc;//设备所在产线
+
+	private String equipPic;//设备图片
+
+	public String getEquipPic() {
+		return equipPic;
+	}
+
+	public void setEquipPic(String equipPic) {
+		this.equipPic = equipPic;
+	}
+
 	private String faultDesc;//故障描述
 	private String status;//状态信息
 	private String reportPerson;//上报人

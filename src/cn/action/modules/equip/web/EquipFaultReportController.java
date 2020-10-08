@@ -109,6 +109,6 @@ public class EquipFaultReportController extends BaseController{
 	public String startRepair(EquipFaultReport equipFaultReport,Model model,RedirectAttributes redirectAttributes){
 	String message=equipFaultReportService.saveStartRepair(equipFaultReport);
 	this.addMessage(redirectAttributes,message);
-	return "redirect:"+adminPath+"/equip/report/repairList";
+	return "redirect:"+adminPath+"/equip/report/repairlist";
 	}
 }
